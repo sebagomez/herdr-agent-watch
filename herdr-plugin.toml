@@ -1,0 +1,11 @@
+id = "sebagomez.agent-watch"
+name = "Agent Watch"
+version = "0.1.0"
+min_herdr_version = "0.9.0"
+description = "A nudge the moment any herdr agent is waiting for you. Companion to herdr-radar (which owns the display)."
+platforms = ["linux", "macos", "windows"]
+
+# Fires on every agent state change; notify.py only acts on -> blocked.
+[[events]]
+on = "pane.agent_status_changed"
+command = ["python3", "notify.py"]
